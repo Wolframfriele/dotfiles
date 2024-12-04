@@ -1,0 +1,58 @@
+# Get editor completions based on the config schema
+# "$schema" = 'https://starship.rs/config-schema.json'
+
+# format = '''
+# [┌───────────────────>](bold green)
+# [│](bold green)$directory$rust$package
+# [└─>](bold green) '''
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+format = """
+[  ](bg:#769ff0 fg:#161616)\
+$username\
+$directory\
+[](fg:#769ff0 bg:#464646)\
+$git_branch\
+$git_status\
+[](fg:#464646 bg:#202020)\
+$time\
+[](fg:#202020 bg:#161616)\
+\n$character"""
+
+[directory]
+style = "bold fg:#161616 bg:#769ff0"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:#464646"
+format = "[[ $symbol $branch ](fg:#3ddbd9 bg:#464646)]($style)"
+
+[git_status]
+style = "bg:#394260"
+ahead = "⇡$count"
+format = "[[($all_status$ahead_behind )](fg:#ee5396 bg:#464646)]($style)"
+
+[time]
+disabled = false
+style = "bg:#202020"
+format = "[ $time ]($style)"
+
+[character]
+success_symbol = '[➜](#769ff0)'
+error_symbol = '[✖](#ee5396)'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = false
+
+
+
+
+
+
+

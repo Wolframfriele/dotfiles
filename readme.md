@@ -18,6 +18,8 @@ dependencies:
 - neovim
 - kitty
 - JetBrainsMono Nerd Font
+- fzf
+- starship
 
 nice to have:
 - rust
